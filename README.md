@@ -1,23 +1,21 @@
 # VScale backup tool
 
-This backup tool is used to helps create and automaticaly remove old backups for [Vscale](https://vscale.io) instances.
+This backup tool creates new and automatically removes old backups for [Vscale](https://vscale.io) instances.
 
 It uses Vscale API for all operations and requires API token with write access.
 
 ## Installation
 To install vscale backup tool use go get:
-```go get -u github.com/sas1024/vscale-backup```
-
-## Usage
-1. Rename config.cfg.dist to config.cfg
-2. Modify API token and old backups deletion interval in config.cfg
-3. Run!
-
-## Command-Line Options
+```bash
+go get -u github.com/sas1024/vscale-backup
 ```
-Usage of ./vscale-backup:
-  -config string
-    	Path to config file (default "config.cfg")
-  -verbose
-    	Enable verbose output
+## Running via CLI
+
+```bash
+vscale-backup -token "vscale-api-token" -expiration "48h"
+```
+
+## Running via Docker
+```bash
+docker run -it -e "API_TOKEN=<vscale-api-token>" -e "BACKUP_EXPIRATION=48h" sas1024/vscale-backup
 ```
