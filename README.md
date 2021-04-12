@@ -18,5 +18,5 @@ vscale-backup -token "vscale-api-token" -expiration "48h" -cron "3 15 * * *"
 
 ## Running via Docker
 ```bash
-docker run -it -e "API_TOKEN=<vscale-api-token>" -e "BACKUP_EXPIRATION=48h" -e 'CRON="3 15 * * *"' sas1024/vscale-backup
+docker run -it -e "API_TOKEN=<vscale-api-token>" -e "BACKUP_EXPIRATION=48h" -e "CRON=3 15 * * *" sas1024/vscale-backup
 ```
